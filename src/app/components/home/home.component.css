@@ -1,0 +1,10 @@
+.home__wrapper{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.home__title{
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px 0;
+}

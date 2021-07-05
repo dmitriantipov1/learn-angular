@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { GameComponent } from './components/game/game.component';
 import { PlaneComponent } from './components/plane/plane.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { PostComponent } from './components/blog/post/post.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,11 +33,13 @@ const routes: Routes = [
     PlaneComponent,
     HomeComponent,
     LoginComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   exports: [
     RouterModule

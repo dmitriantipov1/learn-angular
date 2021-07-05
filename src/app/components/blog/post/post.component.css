@@ -1,0 +1,15 @@
+.post{
+  border: 1px solid #794287;
+  padding: 10px 35px;
+  margin-top: 10px;
+}
+
+.post__title{
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+.post__text{
+  padding: 15px 0;
+}
