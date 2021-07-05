@@ -1,0 +1,24 @@
+.header__inner,
+.menu-list,
+.auth-list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-list__item + .menu-list__item{
+  margin-left: 30px;
+}
+
+.auth-list__item + .auth-list__item{
+  margin-left: 30px;
+}
+
+.menu-list__link:hover,
+.auth-list__link:hover{
+  color: #C1FCF5;
+}
+
+.active{
+  color: #FF8066;
+  font-weight: bold;
+}

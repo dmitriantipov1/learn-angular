@@ -1,0 +1,15 @@
+.header{
+  padding: 30px;
+  background: #461155;
+}
+.container{
+  max-width: 1180px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.content-container{
+  max-width: 1180px;
+  padding: 0 10px;
+  margin: 10px auto;
+}
