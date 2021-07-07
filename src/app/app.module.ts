@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
-
+import {FormsModule} from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BlogComponent } from './components/blog/blog.component';
@@ -13,6 +14,8 @@ import { PlaneComponent } from './components/plane/plane.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { PostComponent } from './components/blog/post/post.component';
+import { AddPostFormComponent } from './components/blog/add-post-form/add-post-form.component';
+
 
 
 const routes: Routes = [
@@ -34,12 +37,14 @@ const routes: Routes = [
     HomeComponent,
     LoginComponent,
     PostComponent,
+    AddPostFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   exports: [
     RouterModule

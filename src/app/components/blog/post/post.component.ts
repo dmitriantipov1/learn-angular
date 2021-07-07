@@ -1,10 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-export interface Post {
-  title: string;
-  body: string;
-}
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -13,16 +7,12 @@ export interface Post {
 })
 export class PostComponent implements OnInit {
 
-  posts: Post[] = []
+  @Input() postsFromServer: any;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts?_limit=5')
-      .subscribe(posts => {
-        console.log('response', posts)
-        this.posts = posts
-      })
+
   }
 
 }
