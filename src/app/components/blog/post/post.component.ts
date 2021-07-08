@@ -1,28 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-export interface Post {
-  title: string;
-  body: string;
-}
+import {Component, OnInit} from '@angular/core';
+import {ShowPostService} from "../post.service";
+import {Post} from "../../../shared/interfaces";
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  styleUrls: ['./post.component.css'],
+  providers: [ShowPostService]
 })
 export class PostComponent implements OnInit {
 
-  posts: Post[] = []
+  posts: Post[] = [];
+  loading: boolean = true;
 
-  constructor(private http: HttpClient) { }
+  constructor(private showPostService: ShowPostService) { }
 
   ngOnInit(): void {
-    this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts?_limit=5')
-      .subscribe(posts => {
-        console.log('response', posts)
-        this.posts = posts
-      })
+    this.loading = true;
+    this.showPostService.getPosts().subscribe(posts => {
+      this.posts = posts;
+      this.loading = false;
+    })
+
   }
 
 }
