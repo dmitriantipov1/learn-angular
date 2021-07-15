@@ -5,21 +5,20 @@ import {Post} from "../../../shared/interfaces";
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css'],
-  providers: [BlogService]
+  styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
 
   constructor(private BlogService: BlogService) {
 
   }
-  posts = this.BlogService.posts
+  posts: Post[] = []
   loading: boolean = true;
 
 
   ngOnInit(): void {
     this.loading = true
-    this.BlogService.getPostsFromServer().subscribe((posts: Post[]) => {
+    this.BlogService.posts$.subscribe((posts) => {
       this.posts = posts
       this.loading = false
     })

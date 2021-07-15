@@ -6,8 +6,7 @@ import {BlogService} from "../blog.service";
 @Component({
   selector: 'app-add-post-form',
   templateUrl: './add-post-form.component.html',
-  styleUrls: ['./add-post-form.component.css'],
-  providers: [BlogService]
+  styleUrls: ['./add-post-form.component.css']
 })
 export class AddPostFormComponent implements OnInit {
 
@@ -18,8 +17,6 @@ export class AddPostFormComponent implements OnInit {
 
   constructor(private BlogService: BlogService) { }
 
-  posts = this.BlogService.posts
-
   ngOnInit(): void {
   }
 
@@ -29,8 +26,8 @@ export class AddPostFormComponent implements OnInit {
       body: this.form.value.body,
     }
     this.BlogService.addPost(newPost).subscribe(post  => {
-      this.posts.push(post)
       this.form.reset()
+      this.BlogService.getPostsFromServer()
     })
 
   }
