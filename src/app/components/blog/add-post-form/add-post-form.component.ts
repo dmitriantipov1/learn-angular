@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Post} from "../../../shared/interfaces";
-import {ShowPostService} from "../post.service";
+import {BlogService} from "../blog.service";
 
 @Component({
   selector: 'app-add-post-form',
   templateUrl: './add-post-form.component.html',
-  styleUrls: ['./add-post-form.component.css'],
-  providers: [ShowPostService]
+  styleUrls: ['./add-post-form.component.css']
 })
 export class AddPostFormComponent implements OnInit {
 
@@ -16,21 +15,19 @@ export class AddPostFormComponent implements OnInit {
     "body": new FormControl("", Validators.required)
   });
 
-  constructor(private showPostService: ShowPostService) { }
+  constructor(private BlogService: BlogService) { }
 
   ngOnInit(): void {
   }
 
-
-
   submit(){
-    const post: Post = {
+    const newPost: Post = {
       title: this.form.value.title,
       body: this.form.value.body,
     }
-    this.showPostService.addPost(post).subscribe(() => {
-      console.log(post)
+    this.BlogService.addPost(newPost).subscribe(post  => {
       this.form.reset()
+      this.BlogService.getPostsFromServer()
     })
 
   }
