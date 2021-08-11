@@ -1,4 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -7,6 +9,17 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class LoginComponent {
 
+  public form: FormGroup = this.fb.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+  });
+
+  constructor(private fb: FormBuilder, private authService: AuthService) { }
+
+  submit(): void{
+    const {email, password} = this.form.value;
+    this.authService.loginUser(email, password).subscribe((a) => console.log('submited', a));
+  }
 
 
 }

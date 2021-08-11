@@ -1,1 +1,46 @@
-<p>chat works!</p>
+<main class="chat">
+  <div class="container">
+    <div class="dialogs">
+      <div class="dialogs__window">
+        <div class="message">
+          <img class="user__img" src="https://www.hpc.uni-freiburg.de/content/images/user-1.png/image" alt="">
+          <p class="message__content">Some message from me</p>
+        </div>
+        <div class="message message--reverse">
+          <img class="user__img"
+               src="https://cdn.shortpixel.ai/client/to_avif,q_lossless,ret_img,w_256,h_256/https://nitin247.com/wp-content/uploads/2019/11/user1.png"
+               alt="">
+          <p class="message__content">Some message from user</p>
+        </div>
+      </div>
+      <div class="dialogs__users">
+        <ul class="users__list">
+          <li class="user__item">
+            <img class="user__img" src="https://www.hpc.uni-freiburg.de/content/images/user-1.png/image" alt="">
+            <p class="user__name">User 1</p>
+          </li>
+          <li class="user__item">
+            <img class="user__img" src="https://cdn.iconscout.com/icon/free/png-512/laptop-user-1-1179329.png" alt="">
+            <p class="user__name">User2</p>
+          </li>
+          <li class="user__item">
+            <img class="user__img"
+                 src="https://cdn.shortpixel.ai/client/to_avif,q_lossless,ret_img,w_256,h_256/https://nitin247.com/wp-content/uploads/2019/11/user1.png"
+                 alt="">
+            <p class="user__name">User 3</p>
+          </li>
+          <li class="user__item">
+            <img class="user__img" src="https://image.flaticon.com/icons/png/512/146/146007.png" alt="">
+            <p class="user__name">User 4</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <form class="chat-message__form">
+      <div class="form-control">
+        <input class="chat-message__input" type="text">
+      </div>
+      <button class="chat-message__btn">Send</button>
+    </form>
+  </div>
+</main>

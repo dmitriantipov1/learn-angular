@@ -1,16 +1,11 @@
-.login{
+.registration{
   margin: 40px auto;
-}
-
-.login__title{
-  color: #461155;
-  text-align: center;
 }
 
 .form{
   display: flex;
   flex-direction: column;
-  margin: 0px auto;
+  margin: 0 auto;
   width: 600px;
 }
 
@@ -18,6 +13,11 @@
   display: flex;
   flex-direction: column;
   margin: 10px 0;
+}
+
+.registration__title{
+  color: #461155;
+  text-align: center;
 }
 
 input{
@@ -45,4 +45,16 @@ label{
 .form-btn:hover{
   background: #794287;
   color: #c1fcf5;
+}
+
+small{
+  color: red;
+}
+
+.form-group__input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+.form-group__input.ng-valid.ng-touched{
+  border: 1px solid green;
 }

@@ -13,14 +13,14 @@ export class PostComponent implements OnInit {
 
   }
   posts: Post[] = []
-  loading: boolean = true;
+  // loading: boolean = true;
 
 
   ngOnInit(): void {
-    this.loading = true
+    // this.loading = true
     this.BlogService.posts$.subscribe((posts) => {
       this.posts = posts
-      this.loading = false
+      // this.loading = false
     })
   }
 }

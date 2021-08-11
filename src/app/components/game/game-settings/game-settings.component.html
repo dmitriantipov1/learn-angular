@@ -1,0 +1,31 @@
+<div class="game-settings">
+  <h2 class="game-settings__title">Please choose level, number of words and translate language</h2>
+  <form class="game-settings__form" (ngSubmit)="gameService.submit()">
+    <div class="game-settings__wrapper">
+      <div class="game-settings__item">
+        <div class="game-settings__name">Level</div>
+        <div class="game-settings__box">
+          <input class="game-settings__value" type="button" *ngFor="let level of gameService.levelList" [value]="level"
+                 [class.active]="level === gameService.selectedLevel" (click)="gameService.selectLevel(level)">
+        </div>
+      </div>
+      <div class="game-settings__item">
+        <div class="game-settings__name">Number of words</div>
+        <div class="game-settings__box">
+          <input class="game-settings__value" type="button" *ngFor="let number of gameService.numOfWordsList" [value]="number"
+                 [class.active]="number === gameService.selectedNumber" (click)="gameService.selectNumber(number)">
+        </div>
+      </div>
+      <div class="game-settings__item">
+        <div class="game-settings__name">Translate from</div>
+        <div class="game-settings__box">
+          <input class="game-settings__value" type="button" *ngFor="let lang of gameService.languageList" [value]="lang"
+                 [class.active]="lang === gameService.selectedLang" (click)="gameService.selectLang(lang)">
+        </div>
+      </div>
+    </div>
+    <div class="game-settings__submit-wrapper">
+      <input class="game-settings__submit" type="submit" value="start">
+    </div>
+  </form>
+</div>

@@ -4,10 +4,19 @@
       "title": "Title 1",
       "body": "Text 1",
       "id": 1
+    }
+  ],
+  "users": [
+    {
+      "name": "user",
+      "email": "user@gmail.com",
+      "password": "aaa",
+      "id": 1
     },
     {
-      "title": "gtdgtt",
-      "body": "gdtdgtgt",
+      "name": "user2",
+      "email": "user2@gmail.com",
+      "password": "aaa",
       "id": 2
     }
   ]

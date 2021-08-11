@@ -1,0 +1,14 @@
+<div class="game-main">
+  <div class="game-main__wrapper">
+    <div class="game-main__title">
+      <h3>Please translate a word</h3>
+    </div>
+    <div class="game-main__word-wrapper">
+      <h2 class="game-main__word">Word</h2>
+      <form class="game-main__form">
+        <input class="game-main__input" type="text" value="Some word here">
+        <input class="game-main__submit" type="submit" (click)="gameService.checkWord()">
+      </form>
+    </div>
+  </div>
+</div>

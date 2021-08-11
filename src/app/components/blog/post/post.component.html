@@ -1,4 +1,4 @@
-<div *ngIf="!loading; else loader">
+<div >
   <div class="post" *ngFor="let post of posts" >
     <h1 class="post__title">{{post.title}}</h1>
     <p class="post__text">{{post.body}}</p>
@@ -8,4 +8,6 @@
 <ng-template #loader>
   <app-preloader></app-preloader>
 </ng-template>
+
+<!--*ngIf="!loading; else loader"-->
 

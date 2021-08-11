@@ -1,0 +1,67 @@
+.game-settings{
+  margin: 50px auto;
+}
+
+.game-settings__title{
+  color: #794287;
+  font-size: 22px;
+  text-align: center;
+}
+
+.game-settings__wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.game-settings__item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px ;
+}
+
+.game-settings__name{
+  margin: 20px ;
+  color: #461155;
+  font-weight: bold;
+}
+
+.game-settings__box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-settings__value{
+  margin: 10px;
+  padding: 5px 8px;
+  background: #461155;
+  color: #c1fcf5;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.game-settings__value.active{
+  color: #FF8066;
+}
+
+.game-settings__submit-wrapper{
+  width: 150px;
+  margin: 0 auto;
+}
+
+.game-settings__submit{
+  margin: 30px 0;
+  padding: 5px 8px;
+  background: #461155;
+  color: #c1fcf5;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+}
