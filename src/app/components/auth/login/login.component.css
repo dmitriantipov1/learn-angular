@@ -46,3 +46,15 @@ label{
   background: #794287;
   color: #c1fcf5;
 }
+
+small{
+  color: red;
+}
+
+.form-group__input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+.form-group__input.ng-valid.ng-touched{
+  border: 1px solid green;
+}

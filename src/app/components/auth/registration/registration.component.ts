@@ -11,14 +11,18 @@ export class RegistrationComponent implements OnInit {
 
   public form: FormGroup = this.fb.group({
     name: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', [Validators.email, Validators.required]],
     password: ['', Validators.required],
-    passwordRepeat: ['', Validators.required]
-  });
+    confirmPassword: ['', Validators.required]
+  }, { validator: this.checkPasswords });
 
   constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  checkPasswords(group: FormGroup) {
+    return group.controls.password.value === group.controls.confirmPassword.value ? null : { notSame: true };
   }
 
   submit(): void{

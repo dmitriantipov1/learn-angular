@@ -12,7 +12,7 @@
       <label for="email">Email</label>
       <input class="form-group__input" id="email" type="email" formControlName="email">
       <div class="validation" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
-        <small class="alert">The field is required</small>
+        <small class="alert">The field must be an email</small>
       </div>
     </div>
     <div class="form-group">
@@ -23,10 +23,10 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="password-repeat">Repeat password</label>
-      <input class="form-group__input" id="password-repeat" type="password" formControlName="passwordRepeat">
-      <div class="validation" *ngIf="form.controls['passwordRepeat'].invalid && form.controls['passwordRepeat'].touched">
-        <small class="alert">The field is required</small>
+      <label for="confirm-password">Repeat password</label>
+      <input class="form-group__input" id="confirm-password" type="password" formControlName="confirmPassword">
+      <div class="validation" *ngIf="form.hasError('notSame')">
+        <small class="alert">The password will be match</small>
       </div>
     </div>
     <button class="form-btn" type="submit">Registration</button>
