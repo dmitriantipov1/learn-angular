@@ -46,7 +46,7 @@ const routes: Routes = [
       {path: 'chat', component: ChatComponent},
       {path: 'game', component: GameComponent},
       {path: 'plane', component: PlaneComponent},
-      {path: 'tasks', component: TasksComponent},
+      // {path: 'tasks', component: TasksComponent},
     ],
     canActivate: [AuthGuard]
   },

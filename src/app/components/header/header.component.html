@@ -1,12 +1,12 @@
 <nav class="header__inner">
-  <ul class="menu-list" *ngIf="auth">
+  <ul class="menu-list" *ngIf="isAuth$ | async">
     <li class="menu-list__item"><a routerLink="/blog" routerLinkActive="active" class="menu-list__link">Blog</a></li>
     <li class="menu-list__item"><a routerLink="/chat" routerLinkActive="active" class="menu-list__link">Chat</a></li>
     <li class="menu-list__item"><a routerLink="/game" routerLinkActive="active" class="menu-list__link">Game</a></li>
     <li class="menu-list__item"><a routerLink="/plane" routerLinkActive="active" class="menu-list__link">Plane</a></li>
     <li class="menu-list__item"><a routerLink="/tasks" routerLinkActive="active" class="menu-list__link">Tasks</a></li>
   </ul>
-  <ul class="auth-list">
+  <ul class="auth-list" *ngIf="!(isAuth$ | async)">
     <li class="auth-list__item"><a routerLink="/login" class="auth-list__link" >Login</a></li>
     <li class="auth-list__item"><a routerLink="/registration" class="auth-list__link">Registration</a></li>
   </ul>
