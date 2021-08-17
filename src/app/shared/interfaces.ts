@@ -15,3 +15,13 @@ export interface UserRegister {
   email: string;
   password: string;
 }
+
+export interface Seat {
+  id: number;
+  positionRow: number;
+  positionPlace: string;
+  price: number;
+  isTaken: boolean;
+  x: number;
+  y: number;
+}

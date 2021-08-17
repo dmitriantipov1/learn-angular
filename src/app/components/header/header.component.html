@@ -6,6 +6,9 @@
     <li class="menu-list__item"><a routerLink="/plane" routerLinkActive="active" class="menu-list__link">Plane</a></li>
     <li class="menu-list__item"><a routerLink="/tasks" routerLinkActive="active" class="menu-list__link">Tasks</a></li>
   </ul>
+  <ul class="auth-list" *ngIf="isAuth$ | async">
+    <li class="auth-list__item"><a routerLink="/logout" class="auth-list__link" >Logout</a></li>
+  </ul>
   <ul class="auth-list" *ngIf="!(isAuth$ | async)">
     <li class="auth-list__item"><a routerLink="/login" class="auth-list__link" >Login</a></li>
     <li class="auth-list__item"><a routerLink="/registration" class="auth-list__link">Registration</a></li>

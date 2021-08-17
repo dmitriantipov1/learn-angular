@@ -7,7 +7,6 @@ import {Observable, Subject} from "rxjs";
   providedIn: 'root'
 })
 export class BlogService {
-
   posts$: Subject<Post[]> = new Subject<Post[]>()
 
   constructor(private http: HttpClient) {

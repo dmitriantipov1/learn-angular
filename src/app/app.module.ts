@@ -36,6 +36,8 @@ import {GameMainComponent} from './components/game/game-main/game-main.component
 import {GameResultComponent} from './components/game/game-result/game-result.component';
 import {AuthGuard} from "./components/auth/auth.guard";
 import { RegistrationComponent } from './components/auth/registration/registration.component';
+import { LogoutComponent } from './components/auth/logout/logout.component';
+import { SeatComponent } from './components/plane/seat/seat.component';
 
 
 const routes: Routes = [
@@ -75,6 +77,8 @@ const routes: Routes = [
     GameMainComponent,
     GameResultComponent,
     RegistrationComponent,
+    LogoutComponent,
+    SeatComponent,
   ],
   imports: [
     BrowserModule,
