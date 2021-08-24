@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
+import {SeatService} from "../seat.service";
 
 @Component({
   selector: '[appSeat]',
@@ -11,16 +12,17 @@ export class SeatComponent implements OnInit {
   @Input() ticketPrice: number = 0;
   @Input() ticketPositionRow: number = 0;
   @Input() ticketPositionPlace: string = '';
+  @Input() id: number = 0;
+  @Input() isTaken: boolean = false;
 
-  @Output() clickOnTheTicket = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit(): void {
+  @HostListener('click')
+  click(){
+    this.seatService.reserveSeat(this.id, !this.isTaken);
   }
 
-  addTicketToChart(){
-    //do something
+  constructor(private seatService: SeatService) { }
+
+  ngOnInit(): void {
   }
 
 }

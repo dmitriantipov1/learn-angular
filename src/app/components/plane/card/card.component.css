@@ -1,0 +1,53 @@
+.card-notify{
+  color: #C1FCF5;
+  font-weight: normal;
+}
+
+.card__wrapper{
+  width: 200px;
+}
+
+.card-place{
+  border: 1px solid #461155;
+  border-radius: 7px;
+  width: 100%;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+.card-place__wrapper{
+  display: flex;
+  justify-content: space-between;
+  font-weight: normal;
+  color: #A4C2EC;
+}
+
+.card-value{
+  color: #FF8066;
+}
+
+.card-total{
+  border-top: 1px solid #461155;
+  padding: 10px 0;
+  text-align: right;
+  margin-top: 30px;
+}
+
+.card__button{
+  text-align: center;
+}
+
+.card-btn{
+  width: 120px;
+  padding: 7px 10px;
+  border: 1px solid #461155;
+  background: transparent;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.card-btn:hover{
+  background: #461155;
+  color: #c1fcf5;
+}

@@ -154,3 +154,9 @@ p{
 .hidden{
   display: none;
 }
+
+.cards__wrapper{
+  position: fixed;
+  left: 50px;
+  top: 100px;
+}

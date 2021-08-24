@@ -1,6 +1,6 @@
 <svg>
   <g>
-    <g class="g-wrap place" stroke-width="2" [ngStyle]="{'transform': 'translate(' + x + 'px, ' + y + 'px)'}"
+    <g class="g-wrap place" [class.reserved]="isTaken" stroke-width="2" [ngStyle]="{'transform': 'translate(' + x + 'px, ' + y + 'px)'}"
        [attr.data-position-row]="ticketPositionRow" [attr.data-position-place]="ticketPositionPlace">
       <g class="place-man" fill="#FFFFFF" stroke-width="2" transform="translate(10.000000, 3.000000)">
         <circle cx="9" cy="5" r="4"></circle>

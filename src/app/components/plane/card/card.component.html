@@ -1,0 +1,23 @@
+<div class="card">
+  <h3 *ngIf="!isEmpty" class="card-notify">please, choose a place</h3>
+  <form *ngIf="isEmpty" class="card__wrapper">
+  <div class="card-place">
+    <div class="card-place__wrapper">
+        <div class="card-info">Place</div>
+        <div class="card-value">A</div>
+    </div>
+    <div class="card-place__wrapper">
+      <div class="card-info">Row</div>
+      <div class="card-value">1</div>
+    </div>
+    <div class="card-place__wrapper">
+      <div class="card-info">Price</div>
+      <div class="card-value">100 <span class="card-currency">EUR</span> </div>
+    </div>
+  </div>
+    <div class="card-total">100 <span class="card-currency">EUR</span></div>
+  <div class="card__button">
+    <input class="card-btn" type="submit" value="order">
+  </div>
+  </form>
+</div>

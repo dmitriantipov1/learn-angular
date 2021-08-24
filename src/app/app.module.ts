@@ -38,6 +38,10 @@ import {AuthGuard} from "./components/auth/auth.guard";
 import { RegistrationComponent } from './components/auth/registration/registration.component';
 import { LogoutComponent } from './components/auth/logout/logout.component';
 import { SeatComponent } from './components/plane/seat/seat.component';
+import { CardComponent } from './components/plane/card/card.component';
+import { StoreModule } from '@ngrx/store';
+import * as fromState from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 const routes: Routes = [
@@ -48,6 +52,7 @@ const routes: Routes = [
       {path: 'chat', component: ChatComponent},
       {path: 'game', component: GameComponent},
       {path: 'plane', component: PlaneComponent},
+      {path: 'logout', component: LogoutComponent},
       // {path: 'tasks', component: TasksComponent},
     ],
     canActivate: [AuthGuard]
@@ -79,6 +84,7 @@ const routes: Routes = [
     RegistrationComponent,
     LogoutComponent,
     SeatComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,7 +102,9 @@ const routes: Routes = [
     FormsModule,
     MatInputModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    StoreModule.forRoot(fromState.reducers, { }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   exports: [
     RouterModule

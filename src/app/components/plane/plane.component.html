@@ -1,5 +1,8 @@
 <div class="container">
   <div class="wrap">
+    <div class="cards__wrapper">
+      <app-card></app-card>
+    </div>
     <svg viewBox="0 0 560 1800">
       <symbol id="seatPrefix__seat-source" stroke-width="2">
         <path d="M6,25 L32,25 L32,6 C32,3.23857625 29.7614237,1 27,1 L11,1 C8.23857625,1 6,3.23857625 6,6 L6,25 Z"></path>
@@ -58,9 +61,9 @@
         <text fill="#CCCCCC" text-anchor="middle" x="360" y="330"> E</text>
         <text fill="#CCCCCC" text-anchor="middle" x="400" y="330"> F</text>
       </g>
-      <g *ngFor="let seat of seats" transform="translate(0,40)">
+      <g *ngFor="let seat of seats$ | async" transform="translate(0,40)">
 
-        <g appSeat [x]="seat.x" [y]="seat.y" [ticketPrice]="seat.price" [ticketPositionPlace]="seat.positionPlace" [ticketPositionRow]="seat.positionRow"></g>
+        <g appSeat [isTaken]="seat.isTaken"  [id]="seat.id" [x]="seat.x" [y]="seat.y" [ticketPrice]="seat.price" [ticketPositionPlace]="seat.positionPlace" [ticketPositionRow]="seat.positionRow"></g>
 
 
         <text class="row-num" fill="#CCCCCC" text-anchor="middle" x="280" y="360"> 1</text>

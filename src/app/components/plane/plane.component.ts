@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SeatService} from "./seat.service";
 import {Seat} from "../../shared/interfaces";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-plane',
@@ -8,14 +9,11 @@ import {Seat} from "../../shared/interfaces";
   styleUrls: ['./plane.component.css']
 })
 export class PlaneComponent implements OnInit {
-  seats: Seat[] = [];
+  seats$: Observable<Seat[]> = this.seatsService.seats$;
 
   constructor(protected seatsService: SeatService) {}
 
   ngOnInit(): void {
-    this.seatsService.seatsSubject$.subscribe((seats) => {
-      this.seats = seats
-    })
   }
 
 }
