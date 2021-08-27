@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SeatService} from "./seat.service";
 import {Seat} from "../../shared/interfaces";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 
 @Component({
   selector: 'app-plane',
@@ -9,11 +9,18 @@ import {Observable} from "rxjs";
   styleUrls: ['./plane.component.css']
 })
 export class PlaneComponent implements OnInit {
-  seats$: Observable<Seat[]> = this.seatsService.seats$;
+  userChoice: string = '';
+  seats$: Observable<Seat[]> = of();
+  schemas$ = this.seatsService.schema$;
 
   constructor(protected seatsService: SeatService) {}
 
   ngOnInit(): void {
+  }
+
+  changeSchema(){
+    this.seatsService.loadSchema(this.userChoice);
+    this.seats$ = this.seatsService.getSchema(this.userChoice);
   }
 
 }

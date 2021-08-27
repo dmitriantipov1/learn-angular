@@ -25,3 +25,5 @@ export interface Seat {
   x: number;
   y: number;
 }
+
+export type SchemaId = string;

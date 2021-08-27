@@ -40,8 +40,10 @@ import { LogoutComponent } from './components/auth/logout/logout.component';
 import { SeatComponent } from './components/plane/seat/seat.component';
 import { CardComponent } from './components/plane/card/card.component';
 import { StoreModule } from '@ngrx/store';
-import * as fromState from './reducers';
+import * as fromState from './store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { PlaneEffects } from './store/effects/plane.effects';
 
 
 const routes: Routes = [
@@ -104,7 +106,8 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     StoreModule.forRoot(fromState.reducers, { }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([PlaneEffects])
   ],
   exports: [
     RouterModule
